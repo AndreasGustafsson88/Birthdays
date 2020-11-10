@@ -7,8 +7,8 @@ import sqlalchemy as db
 love_table = db.Table(
     "association",
     Base.metadata,
-    db.Column("left_id", db.Integer, db.ForeignKey("left.id")),
-    db.Column("left_id", db.Integer, db.ForeignKey("left.id"))
+    db.Column("event_id", db.Integer, db.ForeignKey("events.EventId")),
+    db.Column("gift_id", db.Integer, db.ForeignKey("gifts.GiftId"))
 )
 
 
@@ -19,10 +19,11 @@ class Gift(Base):
     Name = db.Column(db.VARCHAR(100), nullable=False)
     Price = db.Column(db.Integer, nullable=False)
     Link = db.Column(db.VARCHAR(255), nullable=True)
-    children = relationship(
-        "events",
-        secondary=love_table
+    Events = relationship(
+        "Event",
+        secondary=love_table,
+        back_populates="gifts"
     )
 
     def __repr__(self):
-        return f"ID: {self.PeopleId} Name: {self.FirstName} {self.LastName} DOB: {self.DOB} Relation: {self.Relation}"
+        return f"ID: {self.GiftId} Name: {self.Name} Price: {self.Price} Link: {self.Link}"
