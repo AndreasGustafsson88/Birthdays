@@ -1,0 +1,4 @@
+.idea/
+venv/
+docker-compose.yml
+app/db/db_settings/
