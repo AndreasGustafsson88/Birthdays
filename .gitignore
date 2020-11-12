@@ -2,3 +2,4 @@
 venv/
 docker-compose.yml
 app/db/db_settings/
+app/_documents/people.txt

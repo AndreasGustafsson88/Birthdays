@@ -1,15 +1,8 @@
-from sqlalchemy.orm import relationship
-
-from db import Base
 import sqlalchemy as db
 
-
-love_table = db.Table(
-    "association",
-    Base.metadata,
-    db.Column("event_id", db.Integer, db.ForeignKey("events.EventId")),
-    db.Column("gift_id", db.Integer, db.ForeignKey("gifts.GiftId"))
-)
+from sqlalchemy.orm import relationship
+from models.Love_Tables import love_table
+from db import Base
 
 
 class Gift(Base):
