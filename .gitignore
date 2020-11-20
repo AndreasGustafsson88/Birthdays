@@ -1,5 +1,5 @@
 .idea/
 venv/
 docker-compose.yml
-app/db/db_settings/
-app/_documents/people.txt
+app/Data/db/db_settings/
+_documents/people.txt

@@ -1,24 +1,11 @@
-from db import session, Base, engine
-from models.Events import Event
-from models.Gifts import Gift
-from models.People import People
+from Data.db import session, Base, engine
+from Data.Models.Events import Event
+from Data.Models.Gifts import Gift
+from Data.Models.People import People
+from UI.main_menu import main_menu
 
 
-def add_people(first_name, last_name, DOB, relation):
-    user = People(
-        FirstName=first_name,
-        LastName=last_name,
-        DOB=DOB,
-        Relation=relation
-    )
-    session.add(user)
-    session.commit()
 
-
-def show_people():
-    people = session.query(People).all()
-    for p in people:
-        print(p)
 
 
 def add_event(name, location, description, date, person_id):
@@ -47,17 +34,7 @@ def show_gifts():
 
 def main():
     Base.metadata.create_all(engine)
-    # add_people("Cecilia", "Melin", "1993-03-27", "kjäreste")
-    # add_event("Födelsedag", "Ulricehamn", "Fyller 33 år gammel", "2021-04-01", 1)
-    # add_gift("Grip EQ DG-bag", 2499, "https://discsport.se/art/5677")
-    show_events()
-    show_people()
-    show_gifts()
-    # andreas = session.query(Event).filter_by(EventId=1).first()
-    # dg_bag = session.query(Gift).filter_by(GiftId=1).first()
-    # andreas.gifts.append(dg_bag)
-    # session.add(andreas)
-    # session.commit()
+    main_menu()
 
 
 

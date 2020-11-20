@@ -1,5 +1,5 @@
 import sqlalchemy as db
-from db import Base
+from Data.db import Base
 
 
 love_table = db.Table(

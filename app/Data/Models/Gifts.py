@@ -1,8 +1,8 @@
 import sqlalchemy as db
 
 from sqlalchemy.orm import relationship
-from models.Love_Tables import love_table
-from db import Base
+from Data.Models.Love_Tables import love_table
+from Data.db import Base
 
 
 class Gift(Base):

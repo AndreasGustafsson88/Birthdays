@@ -1,9 +1,8 @@
 from sqlalchemy.orm import relationship
-from . import People
-from db import Base
+from Data.db import Base
 import sqlalchemy as db
 
-from .Gifts import love_table
+from Data.Models.Love_Tables import love_table
 
 
 class Event(Base):
